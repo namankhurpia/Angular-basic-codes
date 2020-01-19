@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12" > 
+			<h3>I m in app component</h3>
+			<hr>
+			<!-- <app-servers></app-servers> -->
+			
+			<app-servers></app-servers>
+			<app-warning></app-warning>
+			<app-success></app-success>
+
+			<button class="btn btn-primary" (click)="onToggleDetails()" >Show me the money</button>
+			<p *ngIf="showSecret">Secret password = Naman</p>
+			<div 
+				*ngFor = "let l of log , let i = index"
+				[ngStyle] = "{backgroundColor: i >=5 ? 'blue' : 'green'}"
+				[ngClass] = "{'white-text': i>= 5}"
+				>
+				{{ l }}
+			</div>
+		</div>
+	</div>
+</div>
